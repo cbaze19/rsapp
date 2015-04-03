@@ -15,18 +15,18 @@ get '/' do
 
 	names = Array.new
 	levels = Array.new
+	exps = Array.new
 
 	for i in 3..26
 		stat = newTable.search('tr')[i]
 		skillName = stat.search('a').text
 		level = stat.search('td')[3].text
-		skillName.slice! "\n"
-		skillName.slice! "\n"
-		level.slice! "\n"
+		exp = stat.search('td')[4].text
 
 		names.push skillName
 		levels.push level
+		exps.push exp
 	end
 
-	erb :index, :locals => {:skillNames => names, :skillLevels => levels}
+	erb :index, :locals => {:skillNames => names, :skillLevels => levels, :skillExps => exps}
 end
