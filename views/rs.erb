@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= erb :headHelper %>
+    <title>Game Stats App</title>
+  </head>
+  <body style="padding-top:50px">
+
+    <%= erb :navbar %>
+
+  	<table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="col-md-3">Skill</th>
+          <th>Level</th>
+          <th>Experience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for i in 0..23 %>
+        <tr>
+          <td></td>
+          <td><%= skillNames[i] %></td>
+          <td><%= skillLevels[i] %></td>
+          <td><%= skillExps[i] %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>
